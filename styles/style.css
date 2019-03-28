@@ -1,5 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #B9000D;
+}
+
+#button {
+    margin-top: 20px;
+}
+
 #container {
-    min-width: 500px;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 .grid {
@@ -11,5 +24,5 @@
 }
 
 .gridsquare {
-    background-color: grey;
+    background-color: #9C9993;
 }

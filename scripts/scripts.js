@@ -23,8 +23,8 @@ function createGrid (size) {
         for(var x = 0; x < size; x++){
             var square = document.createElement('div');
             square.className = "gridsquare";
-            square.style.width = (500/size)+"px";
-            square.style.height = (500/size)+"px";
+            square.style.width = (600/size)+"px";
+            square.style.height = (600/size)+"px";
             row.appendChild(square);
         }
         grid.appendChild(row);
@@ -33,7 +33,7 @@ function createGrid (size) {
 
 // Gets size value from user 
 function getSize () {
-    size = prompt("What size grid would you like?");
+    size = prompt("What size grid would you like? (Ex: 16)");
 
     if (size > 0 ) {
         return size;
@@ -60,5 +60,5 @@ function listenForMouseover () {
 
 // Changes the square color
 function changeColor () {
-    this.style.background = 'blue';
+    this.style.background = 'black';
 }
