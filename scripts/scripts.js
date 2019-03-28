@@ -23,6 +23,8 @@ function createGrid (size) {
         for(var x = 0; x < size; x++){
             var square = document.createElement('div');
             square.className = "gridsquare";
+            square.style.width = (500/size)+"px";
+            square.style.height = (500/size)+"px";
             row.appendChild(square);
         }
         grid.appendChild(row);
