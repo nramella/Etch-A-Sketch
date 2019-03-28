@@ -1,0 +1,13 @@
+#container {
+    width: 800px;
+}
+
+.row {
+    float:left;
+}
+
+.gridsquare {
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+}
