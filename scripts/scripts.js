@@ -1,27 +1,28 @@
 const container = document.getElementById("container");
-var size;
+var size = 70;
 
-// Creates initial grid of 16x16
-createGrid(70);
+// Creates initial grid of 70x70
+createGrid(size);
 listenForMouseover();
 
 function etchASketch () {
-    clearGrid();
-    createGrid(getSize());
+    removeGrid();
+    getSize();
+    createGrid(size);
     listenForMouseover();
 }
 
+// Adds the Etch-A-Sketch image
 function addImage () {
     var img = document.createElement('img');
     img.src = 'device.png';
-    // img.style.width = ""
     container.appendChild(img);
 }
 
 // Creates the grid with the size value from the user
 function createGrid (size) {
     addImage();
-    
+
     var grid = document.createElement('div');
     grid.id = "grid";
     container.appendChild(grid);
@@ -42,21 +43,33 @@ function createGrid (size) {
 
 // Gets size value from user 
 function getSize () {
-    size = prompt("What size grid would you like? (Ex: 16)");
+    size = prompt("What size grid would you like? (Ex: 50)");
 
-    if (size > 0 ) {
+    if (size > 0 && size < 120) {
         return size;
+    } else if (size > 120) {
+        alert("That number is too high. Select a number less than 120.");
+        etchASketch();
     } else {
         alert("That's not a number");
-        getSize();
+        etchASketch();
     }
 }
 
-// Clears the current grid
-function clearGrid () {
+// Removes the current grid to create a new one
+function removeGrid () {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
+}
+
+// Clears the current grid while maintaining current size
+function clearCurrentGrid () {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+    createGrid(size);
+    listenForMouseover();
 }
 
 // Calls the changeColor function upon mouseover each square of the grid
