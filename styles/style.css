@@ -6,23 +6,30 @@ body {
 }
 
 #button {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 #container {
     width: 600px;
     margin: 0 auto;
-    margin-top: 20px;
+    position: relative;
 }
 
-.grid {
-    width: 200px;
-}
-
-.row {
-    float:left;
+img {
+    width: 947px;
+    height: 700px;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    margin: -7px 0 0 -475px;
 }
 
 .gridsquare {
     background-color: #9C9993;
+    position: relative;
+}
+
+.row {
+    float:left;
+    margin-top: 140px;
 }

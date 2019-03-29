@@ -2,7 +2,7 @@ const container = document.getElementById("container");
 var size;
 
 // Creates initial grid of 16x16
-createGrid(16);
+createGrid(70);
 listenForMouseover();
 
 function etchASketch () {
@@ -11,8 +11,17 @@ function etchASketch () {
     listenForMouseover();
 }
 
+function addImage () {
+    var img = document.createElement('img');
+    img.src = 'device.png';
+    // img.style.width = ""
+    container.appendChild(img);
+}
+
 // Creates the grid with the size value from the user
 function createGrid (size) {
+    addImage();
+    
     var grid = document.createElement('div');
     grid.id = "grid";
     container.appendChild(grid);
@@ -24,7 +33,7 @@ function createGrid (size) {
             var square = document.createElement('div');
             square.className = "gridsquare";
             square.style.width = (600/size)+"px";
-            square.style.height = (600/size)+"px";
+            square.style.height = (380/size)+"px";
             row.appendChild(square);
         }
         grid.appendChild(row);
