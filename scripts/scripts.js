@@ -43,16 +43,18 @@ function createGrid (size) {
 
 // Gets size value from user 
 function getSize () {
-    size = prompt("What size grid would you like? (Ex: 50)");
+    size = prompt("Please pick a numerical value between 1 and 120.");
 
-    if (size > 0 && size < 120) {
+    if (size > 0 && size < 121) {
         return size;
-    } else if (size > 120) {
-        alert("That number is too high. Select a number less than 120.");
-        etchASketch();
+    } else if (size <= 0 || size > 120) {
+        alert("That number is not within 1 and 120. Please try again.");
+        getSize();
+        return size;
     } else {
-        alert("That's not a number");
-        etchASketch();
+        alert("That's not a number... Please enter a numerical value.");
+        getSize();
+        return size;
     }
 }
 
